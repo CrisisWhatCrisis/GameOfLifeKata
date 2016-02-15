@@ -7,3 +7,12 @@ C:\Users\jacksonj\Documents\temp\GameOfLife\GAmeOflife.tests\bin\Debug\nunit.fra
 C:\Users\jacksonj\Documents\temp\GameOfLife\GAmeOflife.tests\obj\Debug\GAmeOflife.tests.csprojResolveAssemblyReference.cache
 C:\Users\jacksonj\Documents\temp\GameOfLife\GAmeOflife.tests\obj\Debug\GAmeOflife.tests.dll
 C:\Users\jacksonj\Documents\temp\GameOfLife\GAmeOflife.tests\obj\Debug\GAmeOflife.tests.pdb
+C:\Users\HodgesM\Documents\Visual Studio 2015\Projects\GameOfLifeKata\GameOfLife.tests\bin\Debug\GameOfLife.tests.dll
+C:\Users\HodgesM\Documents\Visual Studio 2015\Projects\GameOfLifeKata\GameOfLife.tests\bin\Debug\GameOfLife.tests.pdb
+C:\Users\HodgesM\Documents\Visual Studio 2015\Projects\GameOfLifeKata\GameOfLife.tests\bin\Debug\GameOfLife.exe
+C:\Users\HodgesM\Documents\Visual Studio 2015\Projects\GameOfLifeKata\GameOfLife.tests\bin\Debug\nunit.framework.dll
+C:\Users\HodgesM\Documents\Visual Studio 2015\Projects\GameOfLifeKata\GameOfLife.tests\bin\Debug\GameOfLife.pdb
+C:\Users\HodgesM\Documents\Visual Studio 2015\Projects\GameOfLifeKata\GameOfLife.tests\bin\Debug\nunit.framework.xml
+C:\Users\HodgesM\Documents\Visual Studio 2015\Projects\GameOfLifeKata\GameOfLife.tests\obj\Debug\GameOfLife.tests.csprojResolveAssemblyReference.cache
+C:\Users\HodgesM\Documents\Visual Studio 2015\Projects\GameOfLifeKata\GameOfLife.tests\obj\Debug\GameOfLife.tests.dll
+C:\Users\HodgesM\Documents\Visual Studio 2015\Projects\GameOfLifeKata\GameOfLife.tests\obj\Debug\GameOfLife.tests.pdb

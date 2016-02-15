@@ -4,3 +4,9 @@ C:\Users\jacksonj\Documents\temp\GameOfLife\GameOfLife\bin\Debug\GameOfLife.pdb
 C:\Users\jacksonj\Documents\temp\GameOfLife\GameOfLife\obj\Debug\GameOfLife.csprojResolveAssemblyReference.cache
 C:\Users\jacksonj\Documents\temp\GameOfLife\GameOfLife\obj\Debug\GameOfLife.exe
 C:\Users\jacksonj\Documents\temp\GameOfLife\GameOfLife\obj\Debug\GameOfLife.pdb
+C:\Users\HodgesM\Documents\Visual Studio 2015\Projects\GameOfLifeKata\GameOfLife\bin\Debug\GameOfLife.exe.config
+C:\Users\HodgesM\Documents\Visual Studio 2015\Projects\GameOfLifeKata\GameOfLife\obj\Debug\GameOfLife.exe
+C:\Users\HodgesM\Documents\Visual Studio 2015\Projects\GameOfLifeKata\GameOfLife\obj\Debug\GameOfLife.pdb
+C:\Users\HodgesM\Documents\Visual Studio 2015\Projects\GameOfLifeKata\GameOfLife\bin\Debug\GameOfLife.exe
+C:\Users\HodgesM\Documents\Visual Studio 2015\Projects\GameOfLifeKata\GameOfLife\bin\Debug\GameOfLife.pdb
+C:\Users\HodgesM\Documents\Visual Studio 2015\Projects\GameOfLifeKata\GameOfLife\obj\Debug\GameOfLife.csprojResolveAssemblyReference.cache

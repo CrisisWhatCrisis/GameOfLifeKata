@@ -1,29 +1,29 @@
 ﻿using System.Collections.Generic;
-using System.Data;
 
 namespace GameOfLife
 {
     public class GameOfLife
     {
-        const bool ALIVE = true;
-        const bool DEAD = false;
+        private const bool Live = true;
+        private const bool Dead = false;
 
         public List<List<bool>> ProcessGrid(List<List<bool>> grid)
         {
-            var columnCount = grid.Count;
-            for (var columnNo = 0; columnNo < columnCount; columnNo++)
+            var rowCount = grid.Count;
+            for (var row = 0; row < rowCount; row++)
             {
-                var rowCount = grid[columnNo].Count;
-                for (var rowNo = 0; rowNo < rowCount; rowNo++)
+                var columnCount = grid[row].Count;
+                for (var column = 0; column < columnCount; column++)
                 {
+                    var liveNeighbours = GetLiveNeighbourCountForCell(grid, row, column, rowCount, columnCount);
 
-                    var liveCount = GetLiveCountForCell(grid, columnNo, rowNo, rowCount, columnCount);
-                    if (grid[columnNo][rowNo] == ALIVE)
+                    if (grid[row][column] == Live && liveNeighbours < 2 || liveNeighbours > 3)
                     {
-                        if (liveCount < 2 || liveCount > 3)
-                        {
-                            grid[columnNo][rowNo] = DEAD;
-                        }
+                        grid[row][column] = Dead;
+                    }
+                    else if (grid[row][column] == Dead && liveNeighbours == 3)
+                    {
+                        grid[row][column] = Live;
                     }
                 }
             }
@@ -31,80 +31,36 @@ namespace GameOfLife
 
         }
 
-        private static int GetLiveCountForCell(List<List<bool>> grid, int columnNo, int rowNo, int rowCount, int columnCount)
+        private static int GetLiveNeighbourCountForCell(IReadOnlyList<List<bool>> grid, int row, int column, int rowCount, int columnCount)
         {
+            return GetNeighbourCountForCell(grid, row, column, rowCount, columnCount, Live);
+        }
 
-            var numberAlive = 0;
-            var onTopRow = rowNo == 0;
-            var onBottomRow = rowNo == rowCount-1;
-            var onLeftEdge = columnNo == 0;
-            var onRightEdge = columnNo == columnCount-1;
+        private static int GetNeighbourCountForCell(IReadOnlyList<List<bool>> grid, int row, int column, int rowCount, int columnCount, bool status)
+        {
+            var count = 0;
+            var onTopRow = row == 0;
+            var onBottomRow = row == rowCount - 1;
+            var onLeftEdge = column == 0;
+            var onRightEdge = column == columnCount - 1;
 
+            if (!onTopRow && grid[row -1][column] == status) count++;
 
-            if (!onTopRow)
-            {
-                if (grid[columnNo][rowNo - 1] == ALIVE)
-                {
-                    numberAlive += 1;
-                }
-            }
-            if (!onBottomRow)
-            {
-                if (grid[columnNo][rowNo + 1] == ALIVE)
-                {
-                    numberAlive += 1;
-                }
-            }
+            if (!onBottomRow && grid[row + 1][column] == status) count++;
 
-            if (!onLeftEdge)
-            {
-                if (grid[columnNo - 1][rowNo] == ALIVE)
-                {
-                    numberAlive += 1;
-                }
-            }
-            if (!onRightEdge)
-            {
-                if (grid[columnNo + 1][rowNo] == ALIVE)
-                {
-                    numberAlive += 1;
-                }
-            }
+            if (!onLeftEdge && grid[row][column - 1] == status) count++;
 
-            if (!onLeftEdge && !onTopRow)
-            {
-                if (grid[columnNo - 1][rowNo - 1] == ALIVE)
-                {
-                    numberAlive += 1;
-                }
-            }
+            if (!onRightEdge && grid[row][column + 1] == status) count++;
 
-            if (!onRightEdge && !onTopRow)
-            {
-                if (grid[columnNo + 1][rowNo - 1] == ALIVE)
-                {
-                    numberAlive += 1;
-                }
-            }
+            if (!onLeftEdge && !onTopRow && grid[row - 1][column - 1] == status) count++;
 
-            if (!onLeftEdge && !onBottomRow)
-            {
-                if (grid[columnNo - 1][rowNo + 1] == ALIVE)
-                {
-                    numberAlive += 1;
-                }
-            }
+            if (!onRightEdge && !onTopRow && grid[row - 1][column + 1] == status) count++;
 
-            if (!onRightEdge && !onBottomRow)
-            {
-                if (grid[columnNo + 1][rowNo + 1] == ALIVE)
-                {
-                    numberAlive += 1;
-                }
-            }
-            return numberAlive;
+            if (!onLeftEdge && !onBottomRow && grid[row + 1][column - 1] == status) count++;
 
+            if (!onRightEdge && !onBottomRow && grid[row + 1][column + 1] == status) count++;
 
+            return count;
         }
     }
 }
